@@ -1,0 +1,16 @@
+<xml>
+<ToUserName><![CDATA[{{dict['to']}}]]></ToUserName>
+<FromUserName><![{{dict['from']}}]]></FromUserName>
+<CreateTime>{{dict['time']}}</CreateTime>
+{%- if dict['type']=='text' or dict['type']=='location' -%}
+    {# text , location #}
+    <MsgType><![CDATA[text]]></MsgType>
+    <Content><![CDATA[{{dict['msg']}}]]></Content>
+{% else %}
+    {# image , voice  #}
+    <MsgType><![CDATA[{{dict['type']}}]]></MsgType>
+    <Image><MediaId><![CDATA[iCAGChBV08JYpQwwc-RfgxEoPl1cKQsJrWOTr0F58gbJCOjLNRGmMvuKQGBZxBLG]]></MediaId>
+	</Image>
+{%- endif %}
+<FuncFlag>0</FuncFlag>
+</xml>
