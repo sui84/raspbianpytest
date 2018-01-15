@@ -22,6 +22,11 @@ face = conf.iface  #'pppoe-wan'
 cnt = 1000
 print RandMAC()
 
+def SaveFile(pkgs,ofile):
+    with open(ofile,'w') as f:
+        sys.stdout=f
+        for pkg in pkgs:
+            print pkg.show()
 
 def SanPort(ip,ports):
     # ports = (80,83)  SA open , RA not open

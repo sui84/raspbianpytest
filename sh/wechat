@@ -1,0 +1,21 @@
+#!/bin/sh /etc/rc.common
+# Example script  
+# Copyright (C) 2007 OpenWrt.org  
+   
+START=10  
+STOP=15  
+   
+start() {          
+        echo "wechat start" >> /usr/log/log
+		date -R >> /usr/log/log
+		cd /usr/src/raspbianpytest/utils
+        nohup python -u /usr/src/raspbianpytest/utils/webhelper.py 2>>/usr/log/log 1>>/usr/log/log &
+
+        # commands to launch application  
+}                   
+   
+stop() {            
+        echo "wechat stop" >> /usr/log/log
+		date -R >> /usr/log/log
+        # commands to kill application   
+} 
