@@ -17,8 +17,9 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
- date >> /usr/log/log
 cd /usr/src/raspbianpytest/utils
 #source /etc/init.d/wechat start
+date >> /usr/log/log
 python -u /usr/src/raspbianpytest/utils/webhelper.py 2>>/usr/log/log 1>>/usr/log/log &
+python /usr/src/car/server.py 2>>/usr/log/car.log 1>>/usr/log/car.log &
 exit 0
